@@ -1,17 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 15:36:00 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/01 15:45:26 by gaeducas         ###   ########.fr       */
+/*   Created: 2025/11/01 15:44:32 by gaeducas          #+#    #+#             */
+/*   Updated: 2025/11/01 15:46:16 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
-int		putchar(int c);
-void	ft_putstr(char *s);
-void	ft_putnbr(int nb);
+void	ft_putnbr_fd(int nb)
+{
+	if (nb == -2147483648)
+	{
+		write(1, "-2147483648", 11);
+		return ;
+	}
+	if (nb < 0)
+	{
+		nb *= -1;
+		write(1, "-", 1);
+	}
+	if (nb >= 0 && nb <= 9)
+		ft_putchar_fd(nb + '0');
+	if (nb > 9)
+	{
+		ft_putnbr_fd(nb / 10);
+		ft_putnbr_fd(nb % 10);
+	}
+}

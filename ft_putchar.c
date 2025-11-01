@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/29 15:36:00 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/01 15:45:26 by gaeducas         ###   ########.fr       */
+/*   Created: 2025/11/01 15:37:18 by gaeducas          #+#    #+#             */
+/*   Updated: 2025/11/01 15:39:06 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "ft_printf.h"
 
-int		putchar(int c);
-void	ft_putstr(char *s);
-void	ft_putnbr(int nb);
+int putchar(int c)
+{
+	write(1, &c, 1);
+}

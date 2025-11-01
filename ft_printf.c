@@ -6,7 +6,7 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/01 15:31:08 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/01 17:33:40 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,3 +14,7 @@
 //#include "../libft/libft.h"
 #include "ft_printf.h"
 
+int	ft_printf(const char *, ...)
+{
+	
+}

@@ -6,13 +6,13 @@
 /*   By: gaeducas <gaeducas@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:39:30 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/02 14:58:46 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/02 23:13:21 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	int	i;
 
@@ -24,4 +24,5 @@ void	ft_putstr(char *s)
 		write(1, &s[i], 1);
 		i++;
 	}
+	return (i);
 }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gaeducas <gaeducas@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/02 15:45:49 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/02 23:51:34 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,45 +16,44 @@
 int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
-	size_t	count;
-	int res;
+	size_t	i;
+	int		count;
 
 	va_start(ap, format);
-	count = 0;
-	while (format[count])
+	i = 0;
+	while (format[i])
 	{
-		if (format[count] == '%')
-		{
-			if (format[count + 1 == '%'])
-				count += ft_putchar('%');
-			else if (format[count + 1] == 'd')
-			{
-				res = va_arg(ap, int);
-				ft_putnbr(res);
-			}
-			else if (format[count + 1] == 's')
-				ft_putstr((char *)format);
-		}
-		else
-			ft_putchar(format[count]);
+		/*		if (format[i] == '%')
+				{
+					if (format[count + 1 == '%'])
+						count += ft_putchar('%');
+					else if (format[count + 1] == 'd')
+					{
+						res = va_arg(ap, int);
+						ft_putnbr(res);
+					}
+					else if (format[count + 1] == 's')
+						ft_putstr((char *)format);
+				}
+				else
+					ft_putchar(format[count]);
+					*/
 		count++;
 	}
 	va_end(ap);
 }
 
-void	ft_percent(va_list ap)
+int	ft_percent(va_list ap, const char *format)
 {
-	int res;
+	int	count;
+	int	i;
 
-		if (ap + 1 == '%')
-			ft_putchar('%');
-		else if (ap + 1 == 'd')
-		{
-			res = va_arg(ap, int);
-			ft_putnbr(res);
-		}
-		else if (ap + 1 == 's')
-			ft_putstr((char *)ap);
-	else
-		ft_putchar(ap);
+	count = 0;
+	i = 0;
+	if (format[i + 1] == '%')
+		count += ft_putchar('%');
+	else if (format[i + 1] == 'd' || format[i + 1] == 'u')
+	{
+		count += ft_putnbr(va_arg(ap, int));
+	}
 }

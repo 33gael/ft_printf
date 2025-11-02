@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gaeducas <gaeducas@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:44:32 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/02 15:09:19 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/02 23:35:53 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,11 +25,11 @@ int	ft_putnbr(int nb)
 		write(1, "-", 1);
 	}
 	if (nb >= 0 && nb <= 9)
-		ft_putchar_fd(nb + '0');
+		ft_putchar(nb + '0');
 	if (nb > 9)
 	{
-		ft_putnbr_fd(nb / 10);
-		ft_putnbr_fd(nb % 10);
+		ft_putnbr(nb / 10);
+		ft_putnbr(nb % 10);
 	}
 	return (nb);
 }

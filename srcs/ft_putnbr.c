@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gaeducas <gaeducas@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:44:32 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/01 15:46:16 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/02 13:32:01 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr_fd(int nb)
+void	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{

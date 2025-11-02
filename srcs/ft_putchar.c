@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gaeducas <gaeducas@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:37:18 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/01 15:39:06 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/02 13:32:08 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int putchar(int c)
+int	ft_putchar(int c)
 {
 	write(1, &c, 1);
 }

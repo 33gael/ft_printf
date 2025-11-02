@@ -6,13 +6,13 @@
 /*   By: gaeducas <gaeducas@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:44:32 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/02 13:32:01 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/02 14:13:20 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	ft_putnbr(int nb)
+int	ft_putnbr(int nb)
 {
 	if (nb == -2147483648)
 	{
@@ -31,4 +31,5 @@ void	ft_putnbr(int nb)
 		ft_putnbr_fd(nb / 10);
 		ft_putnbr_fd(nb % 10);
 	}
+	return (nb);
 }

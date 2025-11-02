@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaeducas <gaeducas@student.fr>             +#+  +:+       +#+        */
+/*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/02 14:12:30 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/02 15:45:49 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_printf(const char *format, ...)
 {
 	va_list	ap;
 	size_t	count;
-	int		res;
+	int res;
 
 	va_start(ap, format);
 	count = 0;
@@ -40,4 +40,21 @@ int	ft_printf(const char *format, ...)
 		count++;
 	}
 	va_end(ap);
+}
+
+void	ft_percent(va_list ap)
+{
+	int res;
+
+		if (ap + 1 == '%')
+			ft_putchar('%');
+		else if (ap + 1 == 'd')
+		{
+			res = va_arg(ap, int);
+			ft_putnbr(res);
+		}
+		else if (ap + 1 == 's')
+			ft_putstr((char *)ap);
+	else
+		ft_putchar(ap);
 }

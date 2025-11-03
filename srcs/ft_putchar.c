@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaeducas <gaeducas@student.fr>             +#+  +:+       +#+        */
+/*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:37:18 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/02 23:36:06 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/03 12:17:16 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#include "../ft_printf.h"
 
 int	ft_putchar(int c)
 {

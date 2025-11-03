@@ -1,8 +1,8 @@
-CFILES = 
+CFILES = $(wildcard *.o)
 
 OBJ = $(CFILES:.c=.o)
 
-INC = includes/
+srcs = srcs/
 
 CFLAGS = -Wall -Werror -Wextra
 

@@ -6,7 +6,7 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:39:30 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/03 13:45:58 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:45:10 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_putstr(char *s)
 
 	i = 0;
 	if (!s)
-		return (0);
+		s = "(null)";
 	while (s[i])
 	{
 		write(1, &s[i], 1);

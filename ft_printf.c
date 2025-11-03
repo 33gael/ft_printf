@@ -6,32 +6,29 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/03 15:47:03 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/03 16:55:39 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_percent(va_list *ap, const char *format, int i)
+static int	ft_percent(va_list ap, char c)
 {
 	int	count;
 
 	count = 0;
-	i = 0;
-	if (!format)
-		return (ft_putstr("null"));
-	if (format[i] == 's')
-		count += ft_putstr(va_arg(*ap, char *));
-	else if (format[i] == '%')
+	if (c == 's')
+		count += ft_putstr(va_arg(ap, char *));
+	else if (c == '%')
 		count += ft_putchar('%');
-	else if (format[i] == 'd' || format[i] == 'i')
-		count += ft_putnbr(va_arg(*ap, int));
-	else if (format[i] == 'u')
-		count += ft_putnbr_unsigned(va_arg(*ap, unsigned int));
-	else if (format[i] == 'X' || format[i] == 'x')
-		count += ft_putnbr_hex(va_arg(*ap, int));
-	else if (format[i] == 'c')
-		count += ft_putchar(va_arg(*ap, int));
+	else if (c == 'd' || c == 'i')
+		count += ft_putnbr(va_arg(ap, int));
+	else if (c == 'u')
+		count += ft_putnbr_unsigned(va_arg(ap, unsigned int));
+	else if (c == 'X' || c == 'x')
+		count += ft_putnbr_hex(va_arg(ap, int));
+	else if (c == 'c')
+		count += ft_putchar(va_arg(ap, int));
 	return (count);
 }
 
@@ -48,8 +45,7 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			i++;
-			ft_percent(&ap, format, i);
+			ft_percent(ap, format[i + 1]);
 			i++;
 		}
 		else
@@ -63,6 +59,9 @@ int	ft_printf(const char *format, ...)
 
 int	main()
 {
-	ft_printf("A j'aime trop %s, %d", "mon quartier", 42);
-	printf("\nB j'aime trop %s, %d", "mon quartier", 42);
+
+	char *str = NULL;
+
+	ft_printf("%p\n", str);
+	printf("%p", str);
 }

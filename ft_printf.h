@@ -6,7 +6,7 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:36:00 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/03 13:22:33 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/03 13:50:49 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,6 @@ int	ft_putchar(int c);
 int	ft_putstr(char *s);
 int	ft_putnbr(int nb);
 int	ft_putnbr_unsigned(unsigned int nb);
-int	ft_putnbr_hex(int nb);
+int	ft_putnbr_hex(unsigned int nb);
 
 #endif

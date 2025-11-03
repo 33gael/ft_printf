@@ -6,23 +6,21 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/03 13:22:43 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/03 14:32:43 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include "../libft/libft.h"
 #include "ft_printf.h"
 
-static int	ft_percent(va_list ap, const char *format)
+static int	ft_percent(va_list ap, const char *format, int i)
 {
 	int	count;
-	int	i;
 
 	count = 0;
 	i = 0;
 	if (!format)
 		return (ft_putstr("null"));
-	else if (format[i + 1] == 's')
+	if (format[i + 1] == 's')
 		count += ft_putstr(va_arg(ap, char *));
 	else if (format[i + 1] == '%')
 		count += ft_putchar('%');
@@ -48,9 +46,23 @@ int	ft_printf(const char *format, ...)
 	i = 0;
 	while (format[i])
 	{
-		ft_percent(ap, format);
+		if (format[i] == '%')
+		{
+			i++;
+			ft_percent(ap, format, i);
+			i++;
+		}
+		else
+			ft_putchar(format[i]);
 		i++;
 	}
 	va_end(ap);
 	return (count);
+}
+#include <stdio.h>
+
+int	main()
+{
+	ft_printf("A j'aime trop %s, %d", "mon quartier", 42);
+	printf("B j'aime trop %s, %d", "mon quartier", 42);
 }

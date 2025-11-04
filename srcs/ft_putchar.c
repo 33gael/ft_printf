@@ -6,7 +6,7 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:37:18 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/03 12:17:16 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/04 11:03:50 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,5 @@
 int	ft_putchar(int c)
 {
 	write(1, &c, 1);
-	return (c);
+	return (1);
 }

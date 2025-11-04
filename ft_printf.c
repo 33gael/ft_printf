@@ -6,7 +6,7 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/04 10:58:46 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/04 11:09:03 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,11 @@ int	ft_printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			ft_percent(ap, format[i + 1]);
+			count += ft_percent(ap, format[i + 1]);
 			i++;
 		}
 		else
-		{
-			ft_putchar(format[i]);
-			count += 1;
-		}
+			count += ft_putchar(format[i]);
 		i++;
 	}
 	va_end(ap);

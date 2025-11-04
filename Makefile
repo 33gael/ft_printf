@@ -14,15 +14,13 @@ SRCS := ft_printf.c \
 
 OBJS := $(SRCS:.c=.o)
 
-INCLUDES := -I srcs
-
 all: $(NAME)
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

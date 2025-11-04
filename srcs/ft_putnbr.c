@@ -6,7 +6,7 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/01 15:44:32 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/03 15:50:50 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/04 10:57:34 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,11 @@ static int nb_len(int nb)
 	int len;
 
 	len = 0;
+	if (nb < 0)
+	{
+		nb *= -1;
+		len++;
+	}
 	while (nb > 0)
 	{
 		nb = nb / 10;

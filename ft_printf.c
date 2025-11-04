@@ -6,7 +6,7 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/04 13:46:09 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:08:05 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,8 @@ int	ft_printf(const char *format, ...)
 		}
 		else
 			count += ft_putchar(format[i]);
-		i++;
+		if (format[i])
+			i++;
 	}
 	va_end(ap);
 	return (count);
@@ -63,9 +64,7 @@ int	ft_printf(const char *format, ...)
 
 int	main(void)
 {
-	char *str = NULL;
-
-	ft_printf("%p\n", str);
-	printf("%p", str);
+	ft_printf("%");
+	printf("%");
 }
 */

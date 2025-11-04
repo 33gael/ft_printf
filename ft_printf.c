@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
+/*   By: gaeducas <gaeducas@student.fr>             +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/03 16:55:39 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/04 01:20:49 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,17 @@ static int	ft_percent(va_list ap, char c)
 
 	count = 0;
 	if (c == 's')
-		count += ft_putstr(va_arg(ap, char *));
+		count = ft_putstr(va_arg(ap, char *));
 	else if (c == '%')
-		count += ft_putchar('%');
+		count = ft_putchar('%');
 	else if (c == 'd' || c == 'i')
-		count += ft_putnbr(va_arg(ap, int));
+		count = ft_putnbr(va_arg(ap, int));
 	else if (c == 'u')
-		count += ft_putnbr_unsigned(va_arg(ap, unsigned int));
+		count = ft_putnbr_unsigned(va_arg(ap, unsigned int));
 	else if (c == 'X' || c == 'x')
-		count += ft_putnbr_hex(va_arg(ap, int));
+		count = ft_putnbr_hex(va_arg(ap, unsigned int), c == 'X');
 	else if (c == 'c')
-		count += ft_putchar(va_arg(ap, int));
+		count = ft_putchar(va_arg(ap, int));
 	return (count);
 }
 
@@ -49,17 +49,20 @@ int	ft_printf(const char *format, ...)
 			i++;
 		}
 		else
+		{
 			ft_putchar(format[i]);
+			count += 1;
+		}
 		i++;
 	}
 	va_end(ap);
 	return (count);
 }
+
 #include <stdio.h>
 
-int	main()
+int	main(void)
 {
-
 	char *str = NULL;
 
 	ft_printf("%p\n", str);

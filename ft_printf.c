@@ -6,7 +6,7 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/04 11:09:03 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/04 13:46:09 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ static int	ft_percent(va_list ap, char c)
 		count += ft_putnbr_hex(va_arg(ap, unsigned int), c == 'X');
 	else if (c == 'c')
 		count += ft_putchar(va_arg(ap, int));
+	else if (c == 'p')
+		count += ft_ptr_verif(va_arg(ap, void *));
 	return (count);
 }
 

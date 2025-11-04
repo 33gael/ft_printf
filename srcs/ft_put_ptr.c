@@ -1,58 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_put_ptr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/01 15:44:32 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/04 13:48:18 by gaeducas         ###   ########.fr       */
+/*   Created: 2025/11/04 11:53:44 by gaeducas          #+#    #+#             */
+/*   Updated: 2025/11/04 13:47:59 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../ft_printf.h"
 
-static int	nb_len(int nb)
+static int	ft_put_ptr(void *ptr)
+{
+	unsigned long long int	nb;
+	char					*hex;
+	int						len;
+
+	len = 0;
+	hex = "0123456789abcdef";
+	nb = (unsigned long long int)ptr;
+	if (nb >= 16)
+		len += ft_put_ptr((void *)(nb / 16));
+	ft_putchar(hex[nb % 16]);
+	len += 1;
+	return (len);
+}
+
+int	ft_ptr_verif(void *ptr)
 {
 	int	len;
 
 	len = 0;
-	if (nb == 0)
-		return (1);
-	if (nb < 0)
+	if (!ptr)
 	{
-		nb *= -1;
-		len++;
+		ft_putstr("(nil)");
+		return (5);
 	}
-	while (nb > 0)
-	{
-		nb = nb / 10;
-		len++;
-	}
+	len += ft_putstr("0x");
+	len += ft_put_ptr(ptr);
 	return (len);
-}
-
-int	ft_putnbr(int nb)
-{
-	int	nb_save;
-
-	nb_save = nb_len(nb);
-	if (nb == -2147483648)
-	{
-		write(1, "-2147483648", 11);
-		return (11);
-	}
-	if (nb < 0)
-	{
-		nb *= -1;
-		write(1, "-", 1);
-	}
-	if (nb >= 0 && nb <= 9)
-		ft_putchar(nb + '0');
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-	return (nb_save);
 }

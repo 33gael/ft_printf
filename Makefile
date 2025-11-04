@@ -4,7 +4,14 @@ CFLAGS		:= -Wall -Wextra -Werror
 AR			:= ar rcs
 RM			:= rm -f
 
-SRCS := $(wildcard *.c srcs/*.c)
+SRCS := ft_printf.c \
+		srcs/ft_putchar.c \
+		srcs/ft_putnbr_hex.c \
+		srcs/ft_put_ptr.c \
+		srcs/ft_putnbr.c \
+		srcs/ft_putnbr_unsigned.c \
+		srcs/ft_putstr.c \
+
 OBJS := $(SRCS:.c=.o)
 
 INCLUDES := -I srcs

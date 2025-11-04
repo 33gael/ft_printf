@@ -6,7 +6,7 @@
 /*   By: gaeducas <gaeducas@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/29 15:34:26 by gaeducas          #+#    #+#             */
-/*   Updated: 2025/11/04 15:08:05 by gaeducas         ###   ########.fr       */
+/*   Updated: 2025/11/04 15:10:09 by gaeducas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,3 @@ int	ft_printf(const char *format, ...)
 	va_end(ap);
 	return (count);
 }
-
-/*
-#include <stdio.h>
-
-int	main(void)
-{
-	ft_printf("%");
-	printf("%");
-}
-*/
